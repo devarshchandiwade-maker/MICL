@@ -1,10 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-}
-
-.stick{
-    position: sticky;
-    top :0
+    padding-top: 20px; 
 }
 
 /* Top Red Bar */
@@ -168,7 +164,7 @@ body {
 
 .main-header {
     max-height: 120px;
-    overflow: hidden;
+    overflow: hiddven;
     transition: all 0.4s ease;
 }
 
@@ -177,7 +173,9 @@ body {
     padding: 0;
 }
 
-
+.stick.scrolled ~ .page-content {
+    margin-top: 80px;
+}
 
 /* small navbar logo */
 .nav-logo{
@@ -204,6 +202,23 @@ body {
     align-items:center;
 }
 
+
+/* MOBILE ONLY behavior */
+@media(max-width:768px){
+
+    /* Hide top bar when scrolled */
+    .stick.scrolled .top-bar {
+        max-height: 0;
+        padding: 0;
+        display: none;
+        transition: all 0.3s;
+    }
+
+    /* Keep main header visible */
+    .stick.scrolled .main-header {
+        max-height: 120px; /* keep visible */
+    }
+}
 
 /* HERO SECTION */
 .hero-section {
@@ -499,6 +514,7 @@ background: #d1b553;
 
 /* MOBILE */
 @media(max-width:991px){
+    
 
 .phone-img{
     position:static;
